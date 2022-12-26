@@ -21,6 +21,6 @@ Please do not hesitate to contact us:
 <u>**BENEFIT team contact**</u>:  
 Mickaël De Backer: mickael.de.backer@iddi.com  
 Samuel Salvaggio: samuel.salvaggio@iddi.com  
-Sarah Kosta: Sarah.Kosta@iddi.com 
+Sarah Kosta: sarah.kosta@iddi.com   
 Emilie Barre: emilie.barre@iddi.com  
-Jean-Christophe.Chiem: Jean-Christophe.Chiem@iddi.com 
+Jean-Christophe.Chiem: jean-christophe.chiem@iddi.com 
