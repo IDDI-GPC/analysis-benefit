@@ -1,0 +1,28 @@
+site_name: Analysis BENEFIT
+nav:
+    - Home: index.md
+    - Patient: 
+        - patient.md
+        - create_user_pt.md
+    - Expert: 
+        - expert.md
+        - create_user_exp.md
+    - Getting Started: 
+        - demos.md       
+        
+markdown_extensions:
+    - toc:
+        permalink: True    
+    - markdown_include.include:
+        base_path: docs   
+        
+theme: readthedocs
+
+plugins: 
+    - search
+    - mkdocs-video:
+        is_video: True
+        video_autoplay: False
+        css_style:
+            width: "50%" 
+            margin-left: "25%"
