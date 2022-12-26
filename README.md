@@ -1,2 +1,1 @@
-# analysis-benefit
-Documentation for the BENEFITanalysis app
+# Documentation for the BENEFIT analysis app
