@@ -8,8 +8,9 @@ nav:
         - expert.md
         - create_user_exp.md
     - Getting Started: 
-        - demos.md       
-        
+        - demos.md   
+        - FAQ.md
+
 markdown_extensions:
     - toc:
         permalink: True    
