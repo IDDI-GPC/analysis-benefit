@@ -64,6 +64,8 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../demos/">Demos</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../FAQ/">FAQ</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -90,7 +92,30 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p>This is a section intended for experts.</p>
+<p>The core idea of GPC is to allow patients and clinicians to elicit among the outcomes of the trial, an order of importance that is most relevant to them. The outcomes can be of any type (categorical, continuous, or time-to-event), and can include efficacy, toxicity, quality of life, or cost-related information.
+Once the order of preferences has been established, the GPC procedure operates in the following way:</p>
+<ol>
+<li>
+<p>Pairs are formed for the trial data between all patients of the control arm and all patients of the experimental arm.</p>
+</li>
+<li>
+<p>Each pair is compared on the first priority:</p>
+<p>a) If the outcome is more favorable for the patient in the experimental arm, the pair is declared a "win".</p>
+<p>b) If the outcome is more favorable for the patient in the control arm, the pair is declared a "loss".</p>
+<p>c) If no patient is favored because the outcomes are either equal, or not different enough for proclaiming a clinically relevant winner, the pair is declared a "tie".</p>
+</li>
+<li>
+<p>Pairs that are ties on the first priority, are subsequently compared on the second priority in an attempt to classify them as wins, losses or ties again.</p>
+</li>
+<li>
+<p>This recursive classification is operated until either all pairs are classified as wins or losses, or all outcomes have been investigated following the choice of priorities.</p>
+</li>
+</ol>
+<h1 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Buyse M. Generalized pairwise comparisons of prioritized outcomes in the two-sample problem. Stat Med. 2010 Dec 30;29(30):3245-57. <a href="http://doi.org/10.1002/sim.3923">doi: 10.1002/sim.3923</a>.
+(PDF available <a href="../pdfs/2010_Buyse.pdf" target="_blank">here</a>.)</li>
+</ul>
               
             </div>
           </div><footer>
