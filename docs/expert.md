@@ -19,6 +19,8 @@ Once the order of preferences has been established, the GPC procedure operates i
 
 # References
 
+* <a href="../pdfs/Bibliography - generalized pairwise comparisons for prioritized outcomes - November 2022.zip" download>All GPC methodological and illustrative literature (.zip)</a>
+
 * Buyse M. Generalized pairwise comparisons of prioritized outcomes in the two-sample problem. Stat Med. 2010 Dec 30;29(30):3245-57. [doi: 10.1002/sim.3923](http://doi.org/10.1002/sim.3923).
 (PDF available <a href="../pdfs/2010_Buyse.pdf" target="_blank">here</a>.)
 																								
