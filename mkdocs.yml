@@ -10,6 +10,8 @@ nav:
     - Getting Started: 
         - demos.md   
         - FAQ.md
+    - Survival Analysis:
+        - notes_surv.md
 
 markdown_extensions:
     - toc:
