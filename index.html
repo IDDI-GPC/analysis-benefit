@@ -8,7 +8,7 @@
     <title>Analysis BENEFIT</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,7 +33,7 @@
           <a href="." class="icon icon-home"> Analysis BENEFIT
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -71,6 +70,11 @@
                   <li class="toctree-l1"><a class="reference internal" href="FAQ/">FAQ</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Survival Analysis</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="notes_surv/">Notes on survival curves</a>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -84,8 +88,8 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Home</li>
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -94,7 +98,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="analysis-benefit-user-guide">Analysis BENEFIT user guide<a class="headerlink" href="#analysis-benefit-user-guide" title="Permanent link">&para;</a></h1>
+                <div><h1 id="analysis-benefit-user-guide">Analysis BENEFIT user guide<a class="headerlink" href="#analysis-benefit-user-guide" title="Permanent link">¶</a></h1>
 <div class="toc">
 <ul>
 <li><a href="#analysis-benefit-user-guide">Analysis BENEFIT user guide</a><ul>
@@ -104,7 +108,7 @@
 </li>
 </ul>
 </div>
-<h2 id="about">About<a class="headerlink" href="#about" title="Permanent link">&para;</a></h2>
+<h2 id="about">About<a class="headerlink" href="#about" title="Permanent link">¶</a></h2>
 <p>Methods of generalized pairwise comparisons (GPC) form a recent literature that attempts at addressing a common concern for the analysis of randomized clinical trial data; while multiple outcomes of interest are typically measured on patients, traditional statistical investigation only concentrates on a ‘’primary’’ outcome. All other outcomes are then either only considered as of secondary importance, or not considered at all in the analysis.
 GPC aims at circumventing this pattern; its objective is to bridge statistical soundness with clinical relevance by:</p>
 <ol>
@@ -115,15 +119,15 @@ GPC aims at circumventing this pattern; its objective is to bridge statistical s
 <p>Providing a statistical tool that remains appropriate for interpretation and communication of the analysis.</p>
 </li>
 </ol>
-<p><div class="video-container"><video style="width: 50%; margin-left: 25%" controls  ><source src="videos/GPC_intro.mp4" type="video/mp4" /></video></div></p>
-<h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h2>
-<p>Please do not hesitate to contact us:<br />
-<u><strong>BENEFIT team contact</strong></u>:<br />
-Mickaël De Backer: mickael.de.backer@iddi.com<br />
-Samuel Salvaggio: samuel.salvaggio@iddi.com<br />
-Sarah Kosta: sarah.kosta@iddi.com <br />
-Emilie Barre: emilie.barre@iddi.com<br />
-Jean-Christophe.Chiem: jean-christophe.chiem@iddi.com </p>
+<p><div class="video-container"><video style="width:50%;margin-left:25%" controls alt="type:video"><source src="videos/GPC_intro.mp4" type="video/mp4"></source></video></div></p>
+<h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">¶</a></h2>
+<p>Please do not hesitate to contact us:<br>
+<u><strong>BENEFIT team contact</strong></u>:<br>
+Mickaël De Backer: mickael.de.backer@iddi.com<br>
+Samuel Salvaggio: samuel.salvaggio@iddi.com<br>
+Sarah Kosta: sarah.kosta@iddi.com <br>
+Emilie Barre: emilie.barre@iddi.com<br>
+Jean-Christophe.Chiem: jean-christophe.chiem@iddi.com </p></div>
               
             </div>
           </div><footer>
@@ -156,20 +160,21 @@ Jean-Christophe.Chiem: jean-christophe.chiem@iddi.com </p>
     
   </span>
 </div>
-    <script>var base_url = '.';</script>
-    <script src="js/theme_extra.js" defer></script>
-    <script src="js/theme.js" defer></script>
-      <script src="search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
 </html>
 
 <!--
-MkDocs version : 1.4.2
-Build Date UTC : 2023-03-06 09:35:56.088649+00:00
+MkDocs version : 1.5.3
+Build Date UTC : 2023-11-23 10:26:56.068395+00:00
 -->

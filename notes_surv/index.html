@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>FAQ - Analysis BENEFIT</title>
+    <title>Notes on survival curves - Analysis BENEFIT</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "FAQ";
-        var mkdocs_page_input_path = "FAQ.md";
+        var mkdocs_page_name = "Notes on survival curves";
+        var mkdocs_page_input_path = "notes_surv.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -58,17 +58,25 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Getting Started</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../demos/">Demos</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">FAQ</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../FAQ/">FAQ</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Survival Analysis</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../notes_surv/">Notes on survival curves</a>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Notes on survival curves</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#event-tables-and-survival-curves">Event tables and survival curves</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#differences-between-r-and-python">Differences between R and Python</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#comparison-with-r-packages">Comparison with R packages</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                   </li>
               </ul>
       </div>
@@ -85,8 +93,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Getting Started</li>
-      <li class="breadcrumb-item active">FAQ</li>
+          <li class="breadcrumb-item">Survival Analysis</li>
+      <li class="breadcrumb-item active">Notes on survival curves</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -95,13 +103,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">¶</a></h1>
+                <div><h1 id="notes-on-survival-curves">Notes on survival curves<a class="headerlink" href="#notes-on-survival-curves" title="Permanent link">¶</a></h1>
+<p>In this section a comparison of R versus Python survival curves display is documented.</p>
+<h2 id="event-tables-and-survival-curves">Event tables and survival curves<a class="headerlink" href="#event-tables-and-survival-curves" title="Permanent link">¶</a></h2>
+<p>The <a href="https://pypi.org/project/lifelines/"><code>lifelines</code></a> package is used to compute survival curves such as the one pictured below for a time-to-event outcome.</p>
+<p><img alt="" src="../img/surv/lifelines_end_period.png" title="Kaplan-Meier curve with lifelines"></p>
+<h2 id="differences-between-r-and-python">Differences between R and Python<a class="headerlink" href="#differences-between-r-and-python" title="Permanent link">¶</a></h2>
+<p>Events tables and survival curves are identical in R and Python. However, the numbers at risk displayed at certain times may differ for two reasons:</p>
+<ol>
+<li>The numbers at risk displayed can be calculated at the start of the period defined by the x-axis tick, or at the end. An option exists in lifelines (<a href="https://github.com/CamDavidsonPilon/lifelines/issues/1383">see here</a>) to display numbers at risk at the start (left) or end of period (right).</li>
+</ol>
+<p><img src="/img/surv/lifelines_start_period.png" width="300" height="auto">
+<img src="/img/surv/lifelines_end_period.png" width="300" height="auto"></p>
+<h3 id="comparison-with-r-packages">Comparison with R packages<a class="headerlink" href="#comparison-with-r-packages" title="Permanent link">¶</a></h3>
+<p>The <code>survival</code> and <code>prodlim</code> packages display numbers at risk at the <em>start</em> of period, while the <code>KMunicate</code> package display number at risk at the <em>end</em> of period. </p>
+<p><img src="/img/surv/survival.png" alt="image" width="350" height="auto">
+<img src="/img/surv/prodlim.png" alt="image" width="350" height="auto">
+<img src="/img/surv/KMunicate.png" alt="image" width="350" height="auto"></p>
+<p>The <code>lifelines</code> option will thus be set to "start of the period" by default, to align with <code>survival</code> and <code>prodlim</code>  outputs.</p>
+<ol>
+<li>The numbers at risk displayed at a time tick not found in the survival tables are handled differently in R and Python. As shown in the survival figures and table belows for <strong>Time = 1.5</strong>, Python displays the numbers "right before" the missing tick (number at risk = 19 for control), while R displays the numbers "right after" (number at risk = 17 for control).</li>
+</ol>
+<p><img src="/img/surv/table_R.png" alt="image" width="300" height="auto">
+<img src="/img/surv/table_py.png" alt="image" width="300" height="auto"></p>
+<p><img alt="" src="../img/surv/lifelines_start_period_xticks.png">
+<img alt="" src="../img/surv/survival.png"></p>
+<p>The <code>gpc_library</code> core code was modified to account for this difference, and to align with <code>survival</code> and <code>prodlim</code> outputs, as shown below.</p>
+<p><img src="/img/surv/lifelines_start_period.png" width="300" height="auto">
+<img src="/img/surv/survival.png" width="300" height="auto"></p></div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../demos/" class="btn btn-neutral float-left" title="Demos"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../notes_surv/" class="btn btn-neutral float-right" title="Notes on survival curves">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../FAQ/" class="btn btn-neutral float-left" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -124,10 +158,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../demos/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../FAQ/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../notes_surv/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
