@@ -113,24 +113,24 @@
 <ol>
 <li>The numbers at risk displayed can be calculated at the start of the period defined by the x-axis tick, or at the end. An option exists in lifelines (<a href="https://github.com/CamDavidsonPilon/lifelines/issues/1383">see here</a>) to display numbers at risk at the start (left) or end of period (right).</li>
 </ol>
-<p><img src="/img/surv/lifelines_start_period.png" width="300" height="auto">
-<img src="/img/surv/lifelines_end_period.png" width="300" height="auto"></p>
+<p><img src="img/surv/lifelines_start_period.png" width="300" height="auto">
+<img src="img/surv/lifelines_end_period.png" width="300" height="auto"></p>
 <h3 id="comparison-with-r-packages">Comparison with R packages<a class="headerlink" href="#comparison-with-r-packages" title="Permanent link">¶</a></h3>
 <p>The <code>survival</code> and <code>prodlim</code> packages display numbers at risk at the <em>start</em> of period, while the <code>KMunicate</code> package display number at risk at the <em>end</em> of period. </p>
-<p><img src="/img/surv/survival.png" alt="image" width="350" height="auto">
-<img src="/img/surv/prodlim.png" alt="image" width="350" height="auto">
-<img src="/img/surv/KMunicate.png" alt="image" width="350" height="auto"></p>
+<p><img src="img/surv/survival.png" alt="image" width="300" height="auto">
+<img src="img/surv/prodlim.png" alt="image" width="300" height="auto">
+<img src="img/surv/KMunicate.png" alt="image" width="300" height="auto"></p>
 <p>The <code>lifelines</code> option will thus be set to "start of the period" by default, to align with <code>survival</code> and <code>prodlim</code>  outputs.</p>
 <ol>
 <li>The numbers at risk displayed at a time tick not found in the survival tables are handled differently in R and Python. As shown in the survival figures and table belows for <strong>Time = 1.5</strong>, Python displays the numbers "right before" the missing tick (number at risk = 19 for control), while R displays the numbers "right after" (number at risk = 17 for control).</li>
 </ol>
-<p><img src="/img/surv/table_R.png" alt="image" width="300" height="auto">
-<img src="/img/surv/table_py.png" alt="image" width="300" height="auto"></p>
+<p><img src="img/surv/table_R.png" alt="image" width="300" height="auto">
+<img src="img/surv/table_py.png" alt="image" width="250" height="auto"></p>
 <p><img alt="" src="../img/surv/lifelines_start_period_xticks.png">
 <img alt="" src="../img/surv/survival.png"></p>
 <p>The <code>gpc_library</code> core code was modified to account for this difference, and to align with <code>survival</code> and <code>prodlim</code> outputs, as shown below.</p>
-<p><img src="/img/surv/lifelines_start_period.png" width="300" height="auto">
-<img src="/img/surv/survival.png" width="300" height="auto"></p></div>
+<p><img src="img/surv/lifelines_start_period.png" width="330" height="auto">
+<img src="img/surv/survival.png" width="300" height="auto"></p></div>
               
             </div>
           </div><footer>
